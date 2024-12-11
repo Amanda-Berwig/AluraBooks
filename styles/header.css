@@ -1,0 +1,144 @@
+@import url('../styles/styles.css');
+
+
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/Menu.svg);
+    display: inline-block;    
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.container__botao:checked ~.container__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url(../assets/Menu\ Aberto.svg); /* o close é para que o menu hamburguer feche quando clicar no menu hamburguer, colocando uma imagem branca; */
+}
+.container__botao:checked~.container__rotulo {
+    background: var(--cor-primaria);
+
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* o position relative é para que libere usar o pos absolute na lista menu para que ela fique embaixo */;
+}
+.container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.container__imagem {
+    padding: 1rem;
+}
+.lista__menu {
+    display: none;  /* o display none faz com que o menu hamburguer não apareça na tela; */
+    position: absolute;
+    top: 100%;
+    width: 60%;
+}   
+.container__botao:checked~.lista__menu {
+    display: block; /* o display block faz com que o menu hamburguer apareça na tela; */
+/* combinador css(~) - ele pega o elemento que está logo após o elemento anterior com a classe citada
+ */
+}
+
+.lista__menu_titulo, .lista__menu_item {
+    padding: 1rem;
+    background-color: var(--branco);
+}
+.lista__menu_titulo {
+    color: var(--cor-secundaria);
+    font-family:var(--font-nav);
+    font-weight: 700;
+
+}
+.lista__menu_link {
+    font-family:var(--font-nav);
+    font-size: 1rem;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.container__botao {
+    display: none; /* o display none faz com que o menu hamburguer não apareça na tela; */
+}
+.container__titulo {
+     display: none; /*para que o titulo não apareça na tela fora da medida de 1024; */ 
+}
+.opcoes {
+    display: none;
+}
+.container__texto{
+    display: none;
+}
+
+
+@media screen and (min-width:1024px) {
+    .container__titulo, .container__titulo_negrito{
+        font-family: var(--font-secundaria);
+        font-size: 30px;
+    }
+    .container__titulo {
+        font-weight: 400;
+        display: block; 
+    }
+    .container__titulo_negrito {
+        font-weight: 700;
+    }
+    .opcoes {
+        display: flex;
+        gap: 1rem;
+        text-transform: uppercase;
+    }
+    .opcoes__link {
+        color: var(--cor-primaria);
+        text-decoration: none;
+    }
+    .container__imagem_transparente, .cabecalho__menu-hamburguer {
+        display: none;
+    }
+    .opcoes__botao:checked~.lista__menu {
+        display: block;
+        width: auto;
+    }
+    .opcoes__botao {
+        display: none;
+    }
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item {
+        background: var(--cor-primaria);
+        color: var(--branco);
+    }
+    .opcoes__item {
+        padding: 2em 1em;
+    }
+    .lista__menu_item:hover {
+        background-color: var(--cor-primaria);
+    }
+    .lista__menu_item:hover > .lista__menu_link {
+        color: var(--branco);
+    }
+}
+@media screen and (min-width: 1728px){
+    .container__texto{
+        display: block;
+    }
+    .container__ancora {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--cor-primaria);
+    }
+    .cabecalho {
+        padding: 1.5rem 1.5rem 0 1.5rem;        
+    }
+    .opcoes{
+        margin-right: auto;
+        padding-left: 2rem;
+    }
+
+}

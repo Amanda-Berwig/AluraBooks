@@ -1,0 +1,16 @@
+.carrosel_seg_titulo {
+    font-size: 18px;
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    background-color: var(--branco);
+    text-transform: uppercase; 
+}
+
+@media screen and (min-width: 1024px) {
+    .carrosel_seg_titulo {
+        font-size: 26px;
+    }
+}
+    
