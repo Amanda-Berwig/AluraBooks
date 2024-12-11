@@ -10,4 +10,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Swipper JS
 - Git e Github
 
-  <img alt="preview projeto" src=".github/previewalurabooksjpg" width="100%">
+##  Preview em diferentes tamanhos de tela
+
+  <img alt="preview projeto" src="previewalurabookss.png" width="100%">
+ 
+ <br/>
+  <img alt="preview projeto" src="previewalurabooks.png" width="100%">
